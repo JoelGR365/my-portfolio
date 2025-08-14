@@ -1,3 +1,8 @@
-title: "Joel Gil - Portfolio"
-description: "Portfolio and blog of projects and experiences"
+title: "Your Name – IT Portfolio"
+description: "ASIR graduate showcasing backend development, AI integration, and automation projects."
 theme: minima
+show_downloads: false
+author:
+  name: "Joel Gil"
+  email: "joelgil365@gmail.com"
+github_username: JoelGR365
