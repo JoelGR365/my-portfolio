@@ -19,7 +19,7 @@ Includes automated notifications and strong security measures.
 - Scheduled notification system  
 - Comprehensive and synchronized technical documentation  
 
-📄 [Read the Technical Documentation](TECHNICAL_DOCUMENTATION.md)
+📄 [Read the Technical Documentation](docs/TECHNICAL_DOCUMENTATION.md)
 
 ---
 
