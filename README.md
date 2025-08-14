@@ -1,37 +1,28 @@
-# Gym Chatbot Reservation System
+# Joel's IT Portfolio
 
-**Portfolio of Joel Gil** – IT Graduate specialized in backend development, automation, and AI integration.  
+Welcome to my portfolio!  
+I am a recent **ASIR** graduate (Administration of Networked Computer Systems) passionate about IT infrastructure, cloud solutions, and automation.  
+Here, I document my projects and experiments in the tech world — from system administration scripts to infrastructure diagrams.
 
-This project is part of my professional portfolio, showcasing my skills in designing and implementing complete IT solutions.  
-It is a fully functional chatbot system for managing gym class reservations through WhatsApp, powered by AI for intent detection and integrated with external APIs for scheduling.
+## 🚀 Featured Project
+**IT Infrastructure Monitoring & Automation**  
+A complete monitoring and alerting system designed to:
+- Detect failures in real time.
+- Automate recovery tasks.
+- Generate detailed reports.
 
----
+📄 [Read the full technical documentation](docs/technical_documentation.md)  
+🖼 [See project screenshots](assets/)
 
-## 🔹 About Me
-- **Degree:** ASIR (Administration of Networked Computer Systems)
-- **Interests:** Backend development, AI, DevOps, system automation
-- **Skills:** FastAPI, SQLAlchemy, API integration, AI prompt engineering
-- **Languages:** Spanish (native), English (fluent)
-
----
-
-## 🔹 Project Overview
-**Gym Chatbot Reservation System**  
-- **Backend:** FastAPI + SQLAlchemy + SQLite  
-- **AI:** Hybrid intent detection using keywords + GPT-4  
-- **Integrations:** WhatsApp Business API, WodBuster API  
-- **Automation:** APScheduler for scheduled notifications and reservation processing  
-- **Security:** Rate limiting, input validation, logging
-
-📄 **[Read the full Technical Documentation](TECHNICAL_DOCUMENTATION.md)**
+## 🛠 Skills & Tools
+- Linux & Windows Server Administration
+- Networking & Security
+- Virtualization (VMware, VirtualBox)
+- Monitoring Tools (Zabbix, Nagios)
+- Scripting (Bash, PowerShell)
+- Git & GitHub
 
 ---
 
-## 🔹 Live Portfolio
-You can view this project and other updates on my [Portfolio Website](https://JoelGR365.github.io).
-
----
-
-## 📷 Screenshots
-![Chatbot Flow](assets/chatbot_example.png)
-![Architecture Diagram](assets/architecture_diagram.png)
+💼 **Connect with me**  
+[LinkedIn](https://www.linkedin.com/in/tu-perfil) | [Email](mailto:tuemail@example.com)
