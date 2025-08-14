@@ -1,31 +1,16 @@
 ---
-layout: default
-title: Home
+layout: home
+title: Welcome
 ---
-
-# Welcome to my Portfolio
-
-Hi! I recently graduated from ASIR and this is my portfolio website.
-
-## About me
-
-- Passionate about IT and programming  
-- Interested in backend, DevOps, security, and AI  
-- Looking for opportunities in IT  
-
-## Projects
 
 # Gym Chatbot Reservation System
 
 ## Overview
-This is a complete chatbot system for gym class reservations via WhatsApp. It integrates external APIs such as WodBuster and leverages FastAPI and SQLAlchemy for the backend. The system uses AI (OpenAI GPT-4) for hybrid intent detection and includes robust security measures and automated notifications.
+A complete chatbot system for gym class reservations via WhatsApp.  
+Integrates APIs like WodBuster, uses FastAPI and SQLAlchemy for the backend, and GPT-4 for hybrid intent detection.  
+Includes automated notifications and strong security measures.
 
-## Technologies
-- **Backend:** FastAPI, SQLAlchemy, SQLite  
-- **APIs:** WhatsApp Business API, WodBuster API  
-- **AI:** OpenAI GPT-4 for hybrid intent detection (keywords + model)  
-- **Scheduler:** APScheduler for scheduled tasks  
-- **Security:** Rate limiting, input validation, logging system  
+---
 
 ## Key Features
 - Multi-tenant support for multiple gyms  
@@ -34,6 +19,10 @@ This is a complete chatbot system for gym class reservations via WhatsApp. It in
 - Scheduled notification system  
 - Comprehensive and synchronized technical documentation  
 
-## Technical Documentation
+📄 [Read the Technical Documentation](TECHNICAL_DOCUMENTATION.md)
 
-Feel free to explore the [Technical Documentation](TECHNICAL_DOCUMENTATION.md) for an in-depth look at the system.
+---
+
+## About Me
+I’m an ASIR graduate passionate about backend development, AI, and automation.  
+Check my full portfolio on [GitHub](https://github.com/JoelGR365) or connect with me on [LinkedIn](https://linkedin.com/in/joel-gil-rodriguez-584a0b220).
