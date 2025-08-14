@@ -15,7 +15,7 @@ Hi, I'm **Joel**, a recent ASIR graduate passionate about IT infrastructure, net
 
 📄 [Technical Documentation]({{ site.baseurl }}/docs/technical_documentation)
 
-![Monitoring Example](assets/chatbot_example.png)
+![Monitoring Example]({{ site.baseurl }}/assets/chatbot_example.png)
 
 ---
 *This site is powered by [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).*
