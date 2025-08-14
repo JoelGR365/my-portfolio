@@ -3,5 +3,5 @@ description: "Projects, experiences, and experiments in IT."
 theme: jekyll-theme-cayman
 markdown: kramdown
 
-baseurl: "" 
+baseurl: "/my-portfolio" 
 url: "https://joelgr365.github.io"
