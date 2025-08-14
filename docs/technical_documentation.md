@@ -65,8 +65,3 @@ The architecture consists of:
 
 📌 **Note:**  
 This document provides a functional overview of the project without exposing proprietary code to protect intellectual property.
-
-
----
-
-**📋 Documento técnico actualizado - Agosto 2025**
