@@ -13,7 +13,7 @@ Hi, I'm **Joel**, a recent ASIR graduate passionate about IT infrastructure, net
 - Automatic recovery scripts
 - Detailed performance reporting
 
-📄 [Technical Documentation](docs/technical_documentation.md)
+📄 [Technical Documentation]({{ site.baseurl }}/docs/technical_documentation)
 
 ![Monitoring Example](assets/chatbot_example.png)
 
