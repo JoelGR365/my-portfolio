@@ -11,8 +11,9 @@ A complete monitoring and alerting system designed to:
 - Automate recovery tasks.
 - Generate detailed reports.
 
-📄 [Read the full technical documentation](docs/TECHNICAL_DOCUMENTATION.md)  
-🖼 [See project screenshots](assets/)
+📄 [Read the full technical documentation]({{ site.baseurl }}/docs/technical_documentation)
+
+🖼 [See project screenshots]({{ site.baseurl }}/assets/chatbot_example.png)
 
 ## 🛠 Skills & Tools
 - Linux & Windows Server Administration
@@ -25,4 +26,4 @@ A complete monitoring and alerting system designed to:
 ---
 
 💼 **Connect with me**  
-[LinkedIn](https://www.linkedin.com/in/tu-perfil) | [Email](mailto:tuemail@example.com)
+[LinkedIn](https://www.linkedin.com/in/joel-gil-rodriguez-584a0b220) | [Email](mailto:joelgil365@gmail.com)
