@@ -1,28 +1,21 @@
 ---
-layout: home
-title: Welcome
+layout: default
+title: Home
 ---
 
-# Gym Chatbot Reservation System
+# Welcome to My IT Portfolio
 
-## Overview
-A complete chatbot system for gym class reservations via WhatsApp.  
-Integrates APIs like WodBuster, uses FastAPI and SQLAlchemy for the backend, and GPT-4 for hybrid intent detection.  
-Includes automated notifications and strong security measures.
+Hi, I'm **Joel**, a recent ASIR graduate passionate about IT infrastructure, networking, and automation.
 
----
+## Featured Project
+**IT Infrastructure Monitoring & Automation**
+- Real-time server & network monitoring
+- Automatic recovery scripts
+- Detailed performance reporting
 
-## Key Features
-- Multi-tenant support for multiple gyms  
-- Hybrid intent detection and automatic data extraction  
-- Management of pending and confirmed reservations  
-- Scheduled notification system  
-- Comprehensive and synchronized technical documentation  
+📄 [Technical Documentation](docs/technical_documentation.md)
 
-📄 [Read the Technical Documentation](docs/TECHNICAL_DOCUMENTATION.md)
+![Monitoring Example](assets/chatbot_example.png)
 
 ---
-
-## About Me
-I’m an ASIR graduate passionate about backend development, AI, and automation.  
-Check my full portfolio on [GitHub](https://github.com/JoelGR365) or connect with me on [LinkedIn](https://linkedin.com/in/joel-gil-rodriguez-584a0b220).
+*This site is powered by [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/).*
