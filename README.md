@@ -11,7 +11,7 @@ A complete monitoring and alerting system designed to:
 - Automate recovery tasks.
 - Generate detailed reports.
 
-📄 [Read the full technical documentation](docs/technical_documentation.md)  
+📄 [Read the full technical documentation](docs/TECHNICAL_DOCUMENTATION.md)  
 🖼 [See project screenshots](assets/)
 
 ## 🛠 Skills & Tools
