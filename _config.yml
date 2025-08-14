@@ -1,8 +1,12 @@
-title: "Your Name – IT Portfolio"
-description: "ASIR graduate showcasing backend development, AI integration, and automation projects."
+title: "Joel's IT Portfolio"
+description: "Projects, experiences, and experiments in IT."
 theme: minima
-show_downloads: false
-author:
-  name: "Joel Gil"
-  email: "joelgil365@gmail.com"
-github_username: JoelGR365
+markdown: kramdown
+
+# URL settings
+baseurl: "" # empty for main domain
+url: "https://JoelGR365.github.io"
+
+# Build settings
+plugins:
+  - jekyll-feed
