@@ -1,12 +1,7 @@
 title: "Joel's IT Portfolio"
 description: "Projects, experiences, and experiments in IT."
-theme: minima
+theme: jekyll-theme-cayman
 markdown: kramdown
 
-# URL settings
-baseurl: "" # leave empty if root
-url: "https://JoelGR365.github.io"
-
-# Build settings
-plugins:
-  - jekyll-feed
+baseurl: "" 
+url: "https://joelgr365.github.io"
