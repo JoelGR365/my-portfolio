@@ -1,32 +1,32 @@
-const textArray = [
-  "Welcome to my IT Portfolio",
-  "I’m Joel, IT Infrastructure Specialist",
-  "Automation • Networking • Monitoring • Security"
-];
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
 
-let i = 0;
-let j = 0;
-let currentText = "";
-let isDeleting = false;
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
-function type() {
-  currentText = textArray[i];
-  let display = currentText.substring(0, j);
-  document.getElementById("typewriter").textContent = display;
+const letters = "01";
+const fontSize = 16;
+const columns = canvas.width / fontSize;
 
-  if (!isDeleting && j < currentText.length) {
-    j++;
-    setTimeout(type, 100);
-  } else if (isDeleting && j > 0) {
-    j--;
-    setTimeout(type, 50);
-  } else {
-    isDeleting = !isDeleting;
-    if (!isDeleting) {
-      i = (i + 1) % textArray.length;
+const drops = [];
+for (let x = 0; x < columns; x++) drops[x] = 1;
+
+function draw() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "#0f0";
+  ctx.font = fontSize + "px monospace";
+
+  for (let i = 0; i < drops.length; i++) {
+    const text = letters.charAt(Math.floor(Math.random() * letters.length));
+    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+    if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+      drops[i] = 0;
     }
-    setTimeout(type, 1000);
+    drops[i]++;
   }
 }
 
-type();
+setInterval(draw, 33);
