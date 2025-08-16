@@ -2,78 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Joel's IT Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Joel's IT Portfolio</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Terminal -->
-  <section id="terminal">
-    <div class="terminal-window">
-      <div class="terminal-header">
-        <span class="red"></span>
-        <span class="yellow"></span>
-        <span class="green"></span>
-      </div>
-      <div class="terminal-body">
-        <pre id="typewriter"></pre>
-      </div>
-    </div>
+  <section class="hero">
+    <h1 id="typewriter"></h1>
   </section>
-
-  <!-- Projects -->
-  <section id="projects">
-    <h2>🚀 My Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="assets/img/monitoring.png" alt="Monitoring Project">
-        <h3>IT Infrastructure Monitoring & Automation</h3>
-        <p>Real-time monitoring, automated recovery scripts, and detailed reports.</p>
-        <a href="technical-documentation.md" target="_blank">📄 Documentation</a>
-      </div>
-
-      <div class="project-card">
-        <img src="assets/img/project2.png" alt="Another Project">
-        <h3>Network Automation Toolkit</h3>
-        <p>Scripts and tools to automate repetitive network tasks.</p>
-        <a href="#">🔗 View Project</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    const text = `
-C:\\Users\\Joel\\Portfolio
-
-> Welcome to my IT Portfolio!
-Hi, I'm Joel, an ASIR graduate passionate about IT infrastructure, automation, and backend systems.
-
-> Skills
-- Python, FastAPI, SQLAlchemy
-- Networking & Automation
-- AI Integration (GPT-4)
-
-> Featured Project
-"IT Infrastructure Monitoring & Automation"
-- Real-time server & network monitoring
-- Automatic recovery scripts
-- Detailed performance reporting
-
-> Documentation
-Available at technical-documentation.md
-
-> End of demo
-    `;
-    
-    let i = 0;
-    function typeWriter() {
-      if (i < text.length) {
-        document.getElementById("typewriter").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 40); // velocidad de escritura
-      }
-    }
-    window.onload = typeWriter;
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
