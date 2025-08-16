@@ -1,29 +1,14 @@
 # Joel's IT Portfolio
 
-Welcome to my portfolio!  
-I am a recent **ASIR** graduate (Administration of Networked Computer Systems) passionate about IT infrastructure, cloud solutions, and automation.  
-Here, I document my projects and experiments in the tech world — from system administration scripts to infrastructure diagrams.
+Welcome to my portfolio! 🚀  
+This repository showcases my projects, experiences, and experiments in IT.
 
-## 🚀 Featured Project
-**IT Infrastructure Monitoring & Automation**  
-A complete monitoring and alerting system designed to:
-- Detect failures in real time.
-- Automate recovery tasks.
-- Generate detailed reports.
+## Featured Project
+**IT Infrastructure Monitoring & Automation**
+- Real-time server & network monitoring
+- Automatic recovery scripts
+- Detailed performance reporting
 
-📄 [Read the full technical documentation]({{ site.baseurl }}/docs/technical_documentation)
+📄 [Technical Documentation](./technical-documentation.md)
 
-🖼 [See project screenshots]({{ site.baseurl }}/assets/chatbot_example.png)
-
-## 🛠 Skills & Tools
-- Linux & Windows Server Administration
-- Networking & Security
-- Virtualization (VMware, VirtualBox)
-- Monitoring Tools (Zabbix, Nagios)
-- Scripting (Bash, PowerShell)
-- Git & GitHub
-
----
-
-💼 **Connect with me**  
-[LinkedIn](https://www.linkedin.com/in/joel-gil-rodriguez-584a0b220) | [Email](mailto:joelgil365@gmail.com)
+🌍 Live site: [joelgr365.github.io/my-portfolio](https://joelgr365.github.io/my-portfolio)
