@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: monospace;
+  background: #0d0d0d;
+  color: #00ff99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  border-right: 2px solid #00ff99;
+  white-space: nowrap;
+  overflow: hidden;
+}
