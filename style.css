@@ -1,25 +1,39 @@
-/* Fondo negro estilo Alien terminal */
+/* Fondo global */
 body {
   background: #000;
-  color: #33ff88;
-  font-family: "Courier New", monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 20px;
-  overflow: hidden;
 }
 
-/* Pantalla con efecto CRT */
+/* Marco del monitor retro */
+.monitor-frame {
+  background: #111;
+  padding: 20px;
+  border-radius: 40px;
+  box-shadow: inset 0 0 50px #000, 0 0 50px #0f0;
+}
+
+/* Pantalla CRT */
 .crt {
   position: relative;
-  padding: 20px;
-  border: 2px solid #33ff88;
-  border-radius: 6px;
-  box-shadow: 0 0 20px #33ff88;
-  height: 100vh;
+  background: #000;
+  color: #4afc71; /* Verde fosforescente más cercano a la Nostromo */
+  font-family: "Courier New", monospace;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 30px;
+  border: 4px solid #4afc71;
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
   overflow-y: auto;
+  text-shadow: 0 0 5px #4afc71, 0 0 10px #4afc71;
 }
 
-/* Simulación de scanlines */
+/* Líneas horizontales estilo CRT */
 .scanline {
   position: absolute;
   top: 0;
@@ -28,38 +42,48 @@ body {
   height: 100%;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0, 255, 0, 0.1) 0px,
-    rgba(0, 0, 0, 0.1) 2px
+    rgba(0, 0, 0, 0.15) 0px,
+    rgba(0, 0, 0, 0.15) 2px,
+    transparent 2px,
+    transparent 4px
   );
   pointer-events: none;
-  animation: flicker 0.2s infinite;
+  z-index: 2;
+}
+
+/* Parpadeo ligero */
+.flicker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 50, 0, 0.05);
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+  z-index: 1;
 }
 
 @keyframes flicker {
-  0%, 100% { opacity: 0.1; }
+  0% { opacity: 0.1; }
   50% { opacity: 0.3; }
+  100% { opacity: 0.1; }
 }
 
 /* Estilos de texto */
-h1, h2, p, li {
-  margin: 10px 0;
-}
-
 h1 {
-  color: #66ff99;
-  text-shadow: 0 0 5px #66ff99;
+  font-size: 28px;
+  margin: 0 0 10px 0;
 }
 
 h2 {
-  color: #99ffaa;
-  margin-top: 20px;
+  font-size: 18px;
+  margin: 20px 0 10px 0;
   text-decoration: underline;
 }
 
-.highlight { color: #00ffaa; }
-.warning { color: #ffff33; }
-.ok { color: #00ff00; }
-.danger { color: #ff3333; }
+.sub {
+  font-size: 14px;
+  opacity: 0.8;
+}
 
 ul {
   list-style: none;
@@ -68,21 +92,15 @@ ul {
 
 li::before {
   content: "> ";
-  color: #33ff88;
+  color: #4afc71;
 }
 
-/* Blink estilo Alien */
-.blink {
-  animation: blink 1s steps(2, start) infinite;
-}
-@keyframes blink {
-  to { visibility: hidden; }
+.highlight {
+  color: #aaffc3;
 }
 
-/* Footer */
 footer {
-  margin-top: 30px;
+  margin-top: 20px;
   font-size: 14px;
-  text-align: center;
   opacity: 0.7;
 }
