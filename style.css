@@ -1,25 +1,25 @@
-/* Fuente estilo terminal */
+/* Fondo negro estilo Alien terminal */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'VT323', monospace;
   background: #000;
-  color: #33ff33;
-  font-size: 20px;
-  line-height: 1.5;
-  overflow-x: hidden;
+  color: #33ff88;
+  font-family: "Courier New", monospace;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
 }
 
-/* Contenedor con efecto CRT */
+/* Pantalla con efecto CRT */
 .crt {
   position: relative;
-  height: 100vh;
   padding: 20px;
-  text-shadow: 0 0 5px #33ff33, 0 0 10px #0f0;
+  border: 2px solid #33ff88;
+  border-radius: 6px;
+  box-shadow: 0 0 20px #33ff88;
+  height: 100vh;
   overflow-y: auto;
 }
 
-/* Línea de escaneo */
+/* Simulación de scanlines */
 .scanline {
   position: absolute;
   top: 0;
@@ -28,65 +28,61 @@ body {
   height: 100%;
   background: repeating-linear-gradient(
     to bottom,
-    rgba(0, 255, 0, 0.05) 0px,
-    rgba(0, 0, 0, 0.05) 2px
+    rgba(0, 255, 0, 0.1) 0px,
+    rgba(0, 0, 0, 0.1) 2px
   );
-  animation: scan 7s linear infinite;
   pointer-events: none;
+  animation: flicker 0.2s infinite;
 }
 
-@keyframes scan {
-  from { transform: translateY(-100%); }
-  to   { transform: translateY(100%); }
-}
-
-/* Hero principal */
-.hero {
-  margin-top: 10vh;
-  text-align: center;
-}
-
-.terminal-text {
-  font-size: 2.5rem;
-  margin: 0;
-  animation: flicker 2s infinite alternate;
-}
-
-.terminal-sub {
-  font-size: 1.2rem;
-  color: #9aff9a;
-  animation: blink 1.2s infinite;
-}
-
-/* Animaciones de parpadeo */
 @keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.85; }
-  100% { opacity: 1; }
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+/* Estilos de texto */
+h1, h2, p, li {
+  margin: 10px 0;
 }
 
-/* Secciones */
-section {
-  margin: 50px 0;
+h1 {
+  color: #66ff99;
+  text-shadow: 0 0 5px #66ff99;
 }
 
 h2 {
-  color: #66ff66;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  color: #99ffaa;
+  margin-top: 20px;
+  text-decoration: underline;
 }
+
+.highlight { color: #00ffaa; }
+.warning { color: #ffff33; }
+.ok { color: #00ff00; }
+.danger { color: #ff3333; }
 
 ul {
   list-style: none;
-  padding: 0;
+  padding-left: 20px;
 }
 
 li::before {
   content: "> ";
-  color: #33ff33;
+  color: #33ff88;
+}
+
+/* Blink estilo Alien */
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink {
+  to { visibility: hidden; }
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0.7;
 }
