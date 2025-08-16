@@ -1,17 +1,56 @@
 body {
   margin: 0;
-  font-family: monospace;
-  background: #0d0d0d;
-  color: #00ff99;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: black;
+  color: white;
+  font-family: monospace;
 }
 
-.hero h1 {
+.glitch {
   font-size: 2rem;
-  border-right: 2px solid #00ff99;
-  white-space: nowrap;
-  overflow: hidden;
+  position: relative;
+  color: #fff;
+  animation: glitch 2s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  animation: glitchTop 2s infinite;
+  color: #f00;
+  clip: rect(0, 900px, 0, 0);
+}
+
+.glitch::after {
+  animation: glitchBottom 2s infinite;
+  color: #0ff;
+  clip: rect(0, 900px, 0, 0);
+}
+
+@keyframes glitch {
+  0% { transform: none; }
+  20% { transform: skew(0.5deg, 0.5deg); }
+  40% { transform: none; }
+  60% { transform: skew(-0.5deg, -0.5deg); }
+  100% { transform: none; }
+}
+
+@keyframes glitchTop {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(0, 9999px, 100px, 0); transform: translate(-2px, -2px); }
+  20% { clip: rect(0, 9999px, 0, 0); transform: none; }
+}
+
+@keyframes glitchBottom {
+  0% { clip: rect(0, 9999px, 0, 0); }
+  10% { clip: rect(100px, 9999px, 200px, 0); transform: translate(2px, 2px); }
+  20% { clip: rect(0, 9999px, 0, 0); transform: none; }
 }
