@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+  <!-- Terminal -->
   <section id="terminal">
     <div class="terminal-window">
       <div class="terminal-header">
@@ -16,6 +17,26 @@
       </div>
       <div class="terminal-body">
         <pre id="typewriter"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>🚀 My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="assets/img/monitoring.png" alt="Monitoring Project">
+        <h3>IT Infrastructure Monitoring & Automation</h3>
+        <p>Real-time monitoring, automated recovery scripts, and detailed reports.</p>
+        <a href="technical-documentation.md" target="_blank">📄 Documentation</a>
+      </div>
+
+      <div class="project-card">
+        <img src="assets/img/project2.png" alt="Another Project">
+        <h3>Network Automation Toolkit</h3>
+        <p>Scripts and tools to automate repetitive network tasks.</p>
+        <a href="#">🔗 View Project</a>
       </div>
     </div>
   </section>
@@ -49,7 +70,7 @@ Available at technical-documentation.md
       if (i < text.length) {
         document.getElementById("typewriter").innerHTML += text.charAt(i);
         i++;
-        setTimeout(typeWriter, 40); // velocidad
+        setTimeout(typeWriter, 40); // velocidad de escritura
       }
     }
     window.onload = typeWriter;
