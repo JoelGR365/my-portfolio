@@ -1,17 +1,23 @@
 body {
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #000;
   font-family: monospace;
 }
 
+.hero {
+  text-align: center;
+}
+
 .glitch {
-  font-size: 2rem;
   position: relative;
+  font-size: 2.5rem;
+  font-weight: bold;
   color: white;
+  letter-spacing: 2px;
   animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 
@@ -22,40 +28,42 @@ body {
   left: 0;
   top: 0;
   width: 100%;
+  background: black;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
 }
 
 .glitch::before {
   left: 2px;
   text-shadow: -2px 0 red;
-  animation: glitch-anim 2s infinite linear alternate-reverse;
+  animation: glitch-anim 1s infinite linear alternate-reverse;
 }
 
 .glitch::after {
   left: -2px;
   text-shadow: -2px 0 cyan;
-  animation: glitch-anim2 3s infinite linear alternate-reverse;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim {
-  0% { clip: rect(10px, 9999px, 50px, 0); }
-  25% { clip: rect(60px, 9999px, 80px, 0); }
-  50% { clip: rect(30px, 9999px, 60px, 0); }
-  75% { clip: rect(90px, 9999px, 120px, 0); }
-  100% { clip: rect(40px, 9999px, 70px, 0); }
+  0% { clip-path: inset(20% 0 65% 0); }
+  20% { clip-path: inset(40% 0 40% 0); }
+  40% { clip-path: inset(60% 0 25% 0); }
+  60% { clip-path: inset(10% 0 70% 0); }
+  80% { clip-path: inset(30% 0 50% 0); }
+  100% { clip-path: inset(50% 0 20% 0); }
 }
 
 @keyframes glitch-anim2 {
-  0% { clip: rect(20px, 9999px, 60px, 0); }
-  25% { clip: rect(70px, 9999px, 100px, 0); }
-  50% { clip: rect(40px, 9999px, 80px, 0); }
-  75% { clip: rect(100px, 9999px, 130px, 0); }
-  100% { clip: rect(50px, 9999px, 90px, 0); }
+  0% { clip-path: inset(10% 0 75% 0); }
+  20% { clip-path: inset(30% 0 55% 0); }
+  40% { clip-path: inset(50% 0 35% 0); }
+  60% { clip-path: inset(70% 0 15% 0); }
+  80% { clip-path: inset(20% 0 65% 0); }
+  100% { clip-path: inset(40% 0 45% 0); }
 }
 
 @keyframes glitch-skew {
   0% { transform: skew(0deg); }
-  50% { transform: skew(2deg); }
-  100% { transform: skew(-2deg); }
+  50% { transform: skew(3deg); }
+  100% { transform: skew(-3deg); }
 }
