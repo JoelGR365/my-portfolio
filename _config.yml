@@ -1,6 +1,6 @@
 title: "Joel's IT Portfolio"
 description: "Projects, experiences, and experiments in IT."
-theme: jekyll-theme-cayman
+theme: null
 markdown: kramdown
 
 baseurl: "/my-portfolio" 
