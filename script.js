@@ -4,18 +4,17 @@ const ctx = canvas.getContext("2d");
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
-const letters = "01";
-const fontSize = 16;
-const columns = canvas.width / fontSize;
+const letters = "アァカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fontSize = 14;
+const columns = Math.floor(canvas.width / fontSize);
 
-const drops = [];
-for (let x = 0; x < columns; x++) drops[x] = 1;
+const drops = Array(columns).fill(1);
 
 function draw() {
   ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "#0f0";
+  ctx.fillStyle = "#0F0";
   ctx.font = fontSize + "px monospace";
 
   for (let i = 0; i < drops.length; i++) {
@@ -29,4 +28,9 @@ function draw() {
   }
 }
 
-setInterval(draw, 33);
+setInterval(draw, 35);
+
+window.addEventListener("resize", () => {
+  canvas.height = window.innerHeight;
+  canvas.width = window.innerWidth;
+});
