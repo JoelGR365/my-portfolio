@@ -3,14 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joel's IT Portfolio</title>
+  <title>Joel's Alien Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section class="hero">
-    <h1 class="glitch" data-text="WELCOME TO JOEL'S PORTFOLIO">
-      WELCOME TO JOEL'S PORTFOLIO
-    </h1>
-  </section>
+  <div class="crt">
+    <div class="screen-flicker"></div>
+    <div class="scanline"></div>
+
+    <section class="boot">
+      <p class="boot-text">BOOTING...</p>
+    </section>
+
+    <section class="hero hidden">
+      <h1 class="main-title">WELCOME COMMANDER</h1>
+      <p class="sub-title">SYSTEM ONLINE_</p>
+    </section>
+  </div>
+
+  <script>
+    // Simulación de arranque: primero BOOTING → luego bienvenida
+    setTimeout(() => {
+      document.querySelector(".boot").style.display = "none";
+      document.querySelector(".hero").classList.remove("hidden");
+    }, 2500); // 2.5s de arranque
+  </script>
 </body>
 </html>
