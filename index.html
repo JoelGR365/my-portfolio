@@ -8,26 +8,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="crt">
-    <div class="screen-flicker"></div>
-    <div class="scanline"></div>
+  <div class="crt-frame">
+    <!-- Barra de arranque -->
+    <div class="bootbar">BOOTING // WEYLAN-TYPE SYS-CONSOLE</div>
 
-    <section class="boot">
-      <p class="boot-text">BOOTING...</p>
+    <!-- Sección "About Me" estilo terminal -->
+    <section class="about">
+      <h1>WELCOME, COMMANDER</h1>
+      <p class="p-term">
+        M.A.C.E. Subsystem ready<span class="cursor"></span>
+      </p>
+
+      <h2>> ABOUT ME</h2>
+      <p class="p-term">
+        IT graduate specialized in <strong>systems & networks</strong>.  
+        Passionate about <strong>automation</strong>, <strong>cybersecurity</strong> and <strong>infrastructure</strong>.  
+        Skilled in Linux, Windows Server, virtualization and cloud.  
+      </p>
     </section>
 
-    <section class="hero hidden">
-      <h1 class="main-title">WELCOME COMMANDER</h1>
-      <p class="sub-title">SYSTEM ONLINE_</p>
+    <!-- Sección proyectos -->
+    <section class="projects">
+      <h2>> PROJECTS</h2>
+      <p class="p-term">→ Gym Chatbot Reservation System — FastAPI + GPT-4 + WhatsApp Business API</p>
+      <p class="p-term">→ Network Automation Toolkit — Python + SNMP</p>
+      <p class="p-term">→ Infrastructure as Code — Terraform + Ansible</p>
     </section>
   </div>
-
-  <script>
-    // Simulación de arranque: primero BOOTING → luego bienvenida
-    setTimeout(() => {
-      document.querySelector(".boot").style.display = "none";
-      document.querySelector(".hero").classList.remove("hidden");
-    }, 2500); // 2.5s de arranque
-  </script>
 </body>
 </html>
