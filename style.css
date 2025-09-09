@@ -1,92 +1,69 @@
-/* Fuente estilo terminal */
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'VT323', monospace;
-  background: #000;
-  color: #33ff33;
-  font-size: 20px;
-  line-height: 1.5;
-  overflow-x: hidden;
-}
-
-/* Contenedor con efecto CRT */
-.crt {
-  position: relative;
   height: 100vh;
-  padding: 20px;
-  text-shadow: 0 0 5px #33ff33, 0 0 10px #0f0;
-  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  font-family: monospace;
 }
 
-/* Línea de escaneo */
-.scanline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(0, 255, 0, 0.05) 0px,
-    rgba(0, 0, 0, 0.05) 2px
-  );
-  animation: scan 7s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes scan {
-  from { transform: translateY(-100%); }
-  to   { transform: translateY(100%); }
-}
-
-/* Hero principal */
 .hero {
-  margin-top: 10vh;
   text-align: center;
 }
 
-.terminal-text {
+.glitch {
+  position: relative;
   font-size: 2.5rem;
-  margin: 0;
-  animation: flicker 2s infinite alternate;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 2px;
+  animation: glitch-skew 1s infinite linear alternate-reverse;
 }
 
-.terminal-sub {
-  font-size: 1.2rem;
-  color: #9aff9a;
-  animation: blink 1.2s infinite;
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: black;
+  overflow: hidden;
 }
 
-/* Animaciones de parpadeo */
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.85; }
-  100% { opacity: 1; }
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch-anim 1s infinite linear alternate-reverse;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
 }
 
-/* Secciones */
-section {
-  margin: 50px 0;
+@keyframes glitch-anim {
+  0% { clip-path: inset(20% 0 65% 0); }
+  20% { clip-path: inset(40% 0 40% 0); }
+  40% { clip-path: inset(60% 0 25% 0); }
+  60% { clip-path: inset(10% 0 70% 0); }
+  80% { clip-path: inset(30% 0 50% 0); }
+  100% { clip-path: inset(50% 0 20% 0); }
 }
 
-h2 {
-  color: #66ff66;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+@keyframes glitch-anim2 {
+  0% { clip-path: inset(10% 0 75% 0); }
+  20% { clip-path: inset(30% 0 55% 0); }
+  40% { clip-path: inset(50% 0 35% 0); }
+  60% { clip-path: inset(70% 0 15% 0); }
+  80% { clip-path: inset(20% 0 65% 0); }
+  100% { clip-path: inset(40% 0 45% 0); }
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li::before {
-  content: "> ";
-  color: #33ff33;
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  50% { transform: skew(3deg); }
+  100% { transform: skew(-3deg); }
 }
