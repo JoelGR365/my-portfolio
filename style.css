@@ -10,13 +10,15 @@
   --grain: .04;
 }
 
-/* Fondo con viñeta retro */
-body {
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body{
+  margin: 0;
   background: radial-gradient(120% 100% at 50% 50%, #0a110a 0%, var(--bg-deep) 60%, #000 100%);
   color: var(--phosphor);
   font-family: 'VT323', monospace;
-  margin: 0;
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -32,11 +34,10 @@ body::before{
   background: repeating-linear-gradient(to bottom, var(--scanline) 0px, transparent 2px, transparent 3px);
   mix-blend-mode: screen;
   pointer-events: none;
-  opacity: .35;
-  z-index: 10;
+  opacity: .35; z-index: 10;
 }
 
-/* Grano y viñeta */
+/* Grano + viñeta */
 body::after{
   content:"";
   position: fixed; inset: 0;
@@ -45,14 +46,67 @@ body::after{
     radial-gradient(120% 100% at 50% 50%, transparent 55%, rgba(0,0,0,.35) 100%),
     repeating-conic-gradient(from 0deg, rgba(255,255,255,.02) 0% 0.25%, transparent 0.25% 0.5%);
   mix-blend-mode: overlay;
-  opacity: var(--grain);
-  z-index: 11;
+  opacity: var(--grain); z-index: 11;
 }
 
-/* Marco CRT */
+/* ===== EFECTO ENCENDIDO CRT ===== */
+/* Mientras <html> tenga .booting ocultamos el sitio y mostramos la animación */
+html.booting .site-content { opacity: 0; filter: blur(2px); }
+html.booting body::before,
+html.booting body::after { opacity: 0; } /* es más real: primero pantalla limpia */
+
+.tube-on{
+  position: fixed; inset: 0;
+  background: #000;
+  display: grid; place-items: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Línea horizontal que aparece y “explota” a blanco antes de desvanecer */
+.tube-flash{
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  box-shadow: 0 0 24px 8px #fff;
+  animation: tube-line 1200ms ease-out forwards,
+             tube-fade 1800ms ease-out forwards;
+}
+
+@keyframes tube-line{
+  0%   { transform: scaleY(1) scaleX(0.2); opacity: .9; }
+  30%  { transform: scaleY(1) scaleX(0.5); opacity: 1; }
+  60%  { transform: scaleY(40); opacity: 1; } /* expansión vertical */
+  100% { transform: scaleY(80); opacity: 1; }
+}
+
+@keyframes tube-fade{
+  0%   { filter: blur(0px); }
+  60%  { filter: blur(2px); }
+  100% { filter: blur(4px); }
+}
+
+/* Apagado del overlay */
+.tube-off{
+  animation: overlay-dim 400ms ease-out forwards;
+}
+@keyframes overlay-dim{
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* Revelado del sitio */
+.site-content{
+  transition: opacity .6s ease, filter .6s ease, transform .6s ease;
+  opacity: 0; transform: translateY(6px);
+}
+.site-content.reveal{
+  opacity: 1; filter: none; transform: none;
+}
+
+/* ===== MARCO CRT / CONTENIDO ===== */
 .crt-frame{
-  max-width: 900px; 
-  margin: 6vh auto; 
+  max-width: 900px;
+  margin: 6vh auto;
   padding: 40px 28px;
   background: linear-gradient(180deg, rgba(12,18,12,.6), rgba(5,8,5,.8));
   border: 1px solid rgba(134,184,134,.18);
@@ -73,8 +127,8 @@ body::after{
   box-shadow: inset 0 0 12px rgba(134,184,134,.08);
 }
 
-/* Títulos */
-h1, h2 {
+/* Títulos + glow difuso (bordes suaves) */
+h1, h2{
   color: var(--phosphor);
   text-shadow:
     0 0 1px var(--phosphor),
@@ -83,9 +137,8 @@ h1, h2 {
   letter-spacing: .04em;
   margin: 0 0 .5rem 0;
 }
-
-h1 { font-size: 2rem; }
-h2 { font-size: 1.3rem; margin-top: 2rem; }
+h1{ font-size: 2rem; }
+h2{ font-size: 1.3rem; margin-top: 2rem; }
 
 /* Texto terminal */
 .p-term{
@@ -97,10 +150,10 @@ h2 { font-size: 1.3rem; margin-top: 2rem; }
   font-size: 1.15rem;
 }
 
-/* Cursor estilo prompt */
+/* Cursor prompt */
 .cursor::after{
   content: "_";
   margin-left: .2ch;
-  animation: blink 1.1s steps(1, end) infinite;
+  animation: blink 1.1s steps(1,end) infinite;
 }
-@keyframes blink{50%{opacity:0}}
+@keyframes blink{ 50% { opacity: 0 } }
