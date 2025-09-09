@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="booting">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Joel's Alien Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div class="crt-frame">
-    <!-- Barra de arranque -->
+  <!-- Efecto encendido CRT -->
+  <div class="tube-on" aria-hidden="true">
+    <div class="tube-flash"></div>
+  </div>
+
+  <!-- Scanlines / viñeta / grano están en body::before/after (CSS) -->
+
+  <!-- CONTENIDO -->
+  <div class="crt-frame site-content">
     <div class="bootbar">BOOTING // WEYLAN-TYPE SYS-CONSOLE</div>
 
-    <!-- Sección "About Me" estilo terminal -->
     <section class="about">
       <h1>WELCOME, COMMANDER</h1>
       <p class="p-term">
@@ -21,13 +27,12 @@
 
       <h2>> ABOUT ME</h2>
       <p class="p-term">
-        IT graduate specialized in <strong>systems & networks</strong>.  
-        Passionate about <strong>automation</strong>, <strong>cybersecurity</strong> and <strong>infrastructure</strong>.  
-        Skilled in Linux, Windows Server, virtualization and cloud.  
+        IT graduate specialized in <strong>systems & networks</strong>.<br/>
+        Passionate about <strong>automation</strong>, <strong>cybersecurity</strong> and <strong>infrastructure</strong>.<br/>
+        Skilled in Linux, Windows Server, virtualization and cloud.
       </p>
     </section>
 
-    <!-- Sección proyectos -->
     <section class="projects">
       <h2>> PROJECTS</h2>
       <p class="p-term">→ Gym Chatbot Reservation System — FastAPI + GPT-4 + WhatsApp Business API</p>
@@ -35,5 +40,26 @@
       <p class="p-term">→ Infrastructure as Code — Terraform + Ansible</p>
     </section>
   </div>
+
+  <script>
+    // Secuencia de encendido:
+    // 1) clase .booting en <html> oculta el contenido y muestra el efecto
+    // 2) tras 1.8s quitamos el overlay (apagado del destello)
+    // 3) tras 2.2s mostramos el sitio con un fade sutil
+    const tube = document.querySelector('.tube-on');
+    const htmlEl = document.documentElement;
+    const site = document.querySelector('.site-content');
+
+    setTimeout(() => {
+      tube.classList.add('tube-off'); // apaga flash
+    }, 1800);
+
+    setTimeout(() => {
+      htmlEl.classList.remove('booting');
+      site.classList.add('reveal');
+      // opcional: pequeño “bip” con WebAudio (silenciado por políticas hasta interacción)
+      // lo omitimos por compatibilidad.
+    }, 2200);
+  </script>
 </body>
 </html>
