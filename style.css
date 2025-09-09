@@ -1,69 +1,72 @@
+/* === GENERAL === */
 body {
   margin: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: #000;
-  font-family: monospace;
-}
-
-.hero {
-  text-align: center;
-}
-
-.glitch {
-  position: relative;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 2px;
-  animation: glitch-skew 1s infinite linear alternate-reverse;
-}
-
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background: black;
+  font-family: 'VT323', monospace;
+  color: #88ff88; /* verde más apagado */
   overflow: hidden;
+  height: 100vh;
 }
 
-.glitch::before {
-  left: 2px;
-  text-shadow: -2px 0 red;
-  animation: glitch-anim 1s infinite linear alternate-reverse;
+/* === CRT EFFECTS === */
+.crt {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  color: #88ff88;
+  text-shadow: 0 0 2px #88ff88, 0 0 6px #55aa55;
 }
 
-.glitch::after {
-  left: -2px;
-  text-shadow: -2px 0 cyan;
-  animation: glitch-anim2 1s infinite linear alternate-reverse;
+/* Scanline horizontal */
+.scanline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0,255,0,0.05) 0px,
+    rgba(0,0,0,0.05) 2px
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
-@keyframes glitch-anim {
-  0% { clip-path: inset(20% 0 65% 0); }
-  20% { clip-path: inset(40% 0 40% 0); }
-  40% { clip-path: inset(60% 0 25% 0); }
-  60% { clip-path: inset(10% 0 70% 0); }
-  80% { clip-path: inset(30% 0 50% 0); }
-  100% { clip-path: inset(50% 0 20% 0); }
+/* Flicker aleatorio */
+.screen-flicker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,255,0,0.03);
+  animation: flicker 0.15s infinite;
+  z-index: 1;
 }
 
-@keyframes glitch-anim2 {
-  0% { clip-path: inset(10% 0 75% 0); }
-  20% { clip-path: inset(30% 0 55% 0); }
-  40% { clip-path: inset(50% 0 35% 0); }
-  60% { clip-path: inset(70% 0 15% 0); }
-  80% { clip-path: inset(20% 0 65% 0); }
-  100% { clip-path: inset(40% 0 45% 0); }
+@keyframes flicker {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.05; }
+  100% { opacity: 0.15; }
 }
 
-@keyframes glitch-skew {
-  0% { transform: skew(0deg); }
-  50% { transform: skew(3deg); }
-  100% { transform: skew(-3deg); }
+/* === HERO === */
+.hero {
+  position: relative;
+  text-align: center;
+  top: 30%;
+  z-index: 3;
 }
+
+.hidden { display: none; }
+
+.main-title {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #aaffaa;
+  text-shadow: 0 0 3px #66ff66, 0 0 8px #228822;
+}
+
+.sub-title {
+  margin-top: 1rem;
+  font
